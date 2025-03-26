@@ -1,0 +1,65 @@
+<h2 class="titulo animate__animated animate__fadeInDown">
+  <i class="fas fa-users"></i> Lista de Clientes
+</h2>
+
+<!-- Mensaje de error al eliminar un cliente -->
+<div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show animate__animated animate__shakeX" role="alert">
+  <i class="fas fa-exclamation-triangle"></i> {{ errorMessage }}
+  <button type="button" class="btn-close" (click)="errorMessage = null"></button>
+</div>
+
+<table class="tabla-clientes animate__animated animate__fadeInUp">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th><i class="fas fa-user"></i> Nombre</th>
+      <th><i class="fas fa-envelope"></i> Correo</th>
+      <th><i class="fas fa-cogs"></i> Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes" class="animate__animated animate__fadeIn">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nombres }} {{ cliente.apellido }}</td>
+      <td>{{ cliente.correoElectronico }}</td>
+      <td>
+        <button class="btn editar" (click)="editarCliente(cliente)">
+          <i class="fas fa-edit"></i> Editar
+        </button>
+        <button class="btn eliminar" (click)="eliminarCliente(cliente.id)">
+          <i class="fas fa-trash"></i> Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Botón para agregar cliente -->
+<div class="text-center mt-4">
+  <button class="btn btn-success btn-lg animate__animated animate__pulse animate__infinite" (click)="irAgregarCliente()">
+    <i class="fas fa-user-plus"></i> Agregar Cliente
+  </button>
+</div>
+
+<!-- Formulario de Edición -->
+<div *ngIf="clienteSeleccionado" class="formulario-edicion animate__animated animate__fadeIn">
+  <h3><i class="fas fa-user-edit"></i> Editar Cliente</h3>
+
+  <label><i class="fas fa-user"></i> Nombre:</label>
+  <input type="text" [(ngModel)]="clienteSeleccionado.nombres">
+
+  <label><i class="fas fa-user"></i> Apellido:</label>
+  <input type="text" [(ngModel)]="clienteSeleccionado.apellido">
+
+  <label><i class="fas fa-envelope"></i> Correo:</label>
+  <input type="email" [(ngModel)]="clienteSeleccionado.correoElectronico">
+
+  <div class="botones">
+    <button class="btn guardar" (click)="actualizarCliente()">
+      <i class="fas fa-save"></i> Guardar
+    </button>
+    <button class="btn cancelar" (click)="cancelarEdicion()">
+      <i class="fas fa-ban"></i> Cancelar
+    </button>
+  </div>
+</div>

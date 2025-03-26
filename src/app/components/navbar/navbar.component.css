@@ -1,0 +1,100 @@
+/* Estilos generales para el navbar */
+.navbar {
+    background-color: #2c3e50 !important; /* Color de fondo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 1rem 2rem; /* Espaciado interno */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de hover en el navbar */
+.navbar:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Estilos para la marca del navbar */
+.navbar-brand {
+    color: #ffffff !important; /* Color del texto */
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de hover en la marca */
+.navbar-brand:hover {
+    color: #f39c12 !important; /* Cambio de color al hacer hover */
+}
+
+/* Estilos para los enlaces del navbar */
+.nav-link {
+    color: #ffffff !important; /* Color del texto */
+    font-size: 1rem; /* Tamaño de la fuente */
+    margin: 0 0.5rem; /* Espaciado entre enlaces */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de hover en los enlaces */
+.nav-link:hover {
+    background-color: #34495e; /* Color de fondo al hacer hover */
+    color: #f39c12 !important; /* Cambio de color al hacer hover */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+/* Animación de aparición para los enlaces */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-item {
+    animation: fadeIn 0.5s ease forwards; /* Aplicar animación */
+    opacity: 0; /* Inicialmente invisible */
+}
+
+/* Retraso en la animación para cada enlace */
+.nav-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.nav-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Estilos para el botón de colapso en dispositivos móviles */
+.navbar-toggler {
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno */
+    padding: 0.5rem; /* Espaciado interno */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.navbar-toggler:hover {
+    background-color: #34495e; /* Color de fondo al hacer hover */
+    transform: scale(1.1); /* Efecto de escala */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Color del ícono */
+    border-radius: 3px; /* Bordes redondeados */
+}
+
